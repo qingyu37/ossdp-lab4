@@ -9,8 +9,7 @@ import static org.junit.Assert.assertEquals;
  * @author : xjy
  * @date : 2023-11-11 10:07
  **/
-public class L202111099_2_TEST {
-
+public class RemoveDuplicateLettersTest {
     /**
      * 等价类划分原则
      *  等价类划分：
