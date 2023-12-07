@@ -1,0 +1,22 @@
+name: Auto_Merge_on_Test_Pass
+on:
+  pull_request:
+    branches:
+      - master
+jobs:
+  merge_on_test_pass:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '14'
+      - name: Install Dependencies
+        run: npm install  # 替换成你的项目安装依赖的命令
+      - name: Run Tests
+        run: npm test  # 替换成你的项目运行测试的命令
+      - name: Merge on Test Pass
+        if: success()  # 只有当测试通过时才执行下面的步骤
+        run: gh pr merge ${{ github.event.number }}
