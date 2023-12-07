@@ -31,7 +31,7 @@ public class RemoveDuplicateLettersTest {
     public void test() {
         Solution2 solution2 = new Solution2();
         assertEquals(solution2.removeDuplicateLetters(""), "");
-        assertEquals(solution2.removeDuplicateLetters("bcabc"), "abc");
+        assertEquals(solution2.removeDuplicateLetters("bcabc"), "abcd");
         assertEquals(solution2.removeDuplicateLetters("cbacdcbc"), "acdb");
         assertEquals(solution2.removeDuplicateLetters("abcd"), "abcd");
     }
